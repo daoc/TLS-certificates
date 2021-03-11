@@ -6,6 +6,7 @@ Certificados TLS para pruebas de sistemas *seguros*
 - `keytool`, que se instala con el JDK
 ### 1) Genera el certificado y el juego de claves para la Certificate Authority (CA)
 $ `openssl req -new -x509 -days 3650 -extensions v3_ca -keyout CA.key -out CA.cer`
+
 ```
 Generating a RSA private key
 .............+++++
@@ -92,12 +93,10 @@ Certificate was added to keystore
 Necesita los archivos `ServerKeyStore.pkcs12` para el programa servidor, y `ClientTrustStore.jks` para el programa cliente. Cópielos, por ejemplo, en el directorio raíz de su proyecto Java.
 ### Servidor
 En el código, antes de ejecutar ninguna operación de aseguramiento TLS, debe incluir:
-<small>
 ```java
 System.setProperty("javax.net.ssl.keyStore", "ServerKeyStore.pkcs12");
 System.setProperty("javax.net.ssl.keyStorePassword", "password");	
 ```
-</small>
 ### Cliente
 En el código, antes de ejecutar ninguna operación de aseguramiento TLS, debe incluir:
 ```java
