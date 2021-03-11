@@ -92,10 +92,10 @@ Certificate was added to keystore
 Necesita los archivos `ServerKeyStore.pkcs12` para el programa servidor, y `ClientTrustStore.jks` para el programa cliente. Cópielos, por ejemplo, en el directorio raíz de su proyecto Java.
 ### Servidor
 En el código, antes de ejecutar ninguna operación de aseguramiento TLS, debe incluir:
-```
-System.setProperty("javax.net.ssl.keyStore", "ServerKeyStore.pkcs12");
-System.setProperty("javax.net.ssl.keyStorePassword", "password");	
-```
+>```
+>System.setProperty("javax.net.ssl.keyStore", "ServerKeyStore.pkcs12");
+>System.setProperty("javax.net.ssl.keyStorePassword", "password");	
+>```
 ### Cliente
 En el código, antes de ejecutar ninguna operación de aseguramiento TLS, debe incluir:
 ```
